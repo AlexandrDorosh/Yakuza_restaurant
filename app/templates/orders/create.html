@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your shoping cart</title>
+    <link rel="stylesheet" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main_styles_cart.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive_cart.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Checkout</h1>
+                <div class="order-info">
+                    <h3>Your order</h3>
+                    <ul>
+                        {% for item in cart %}
+                        <li>
+                            {{ item.quantity }}x {{ item.product.name }}
+                            <span>${{ item.total_price }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <p>Total: ${{ cart.get_total_price }}</p>
+                </div>
+                <form action="." method="post" class="order-form">
+                    {{ form.as_p }}
+                    <p><input type="submit" value="Place order"></p>
+                    {% csrf_token %}
+                </form>                
+            </div>         
+        </div>
+        <div class="row">
+            <div class="col  d-flex justify-content-center">
+                <a href="{% url 'pages:menu' %}" class="button light mr-2">Continue shopping</a>
+                <a href="{% url 'cart:cart_detail' %}" class="button light">
+                    Return to cart</a>
+            </div>            
+        </div>
+    </div>
+
+
+</body>
+
+</html>

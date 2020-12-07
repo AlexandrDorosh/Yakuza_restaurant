@@ -1,0 +1,87 @@
+@font-face
+{
+	font-family: 'Logo';
+	src: url(../../font/Logo.otf) format('truetype'),
+	url(../../font/Logo.otf) format('opentype');
+}
+
+/* Login */
+.header_logo_title{
+	font-family: "Logo";
+}
+.logo a > div:first-child {
+    font-size: 36px;
+    line-height: 0.75;
+    color: #FFFFFF;
+}
+.logo a > div:last-child {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 0.680em;
+    line-height: 0.75;
+    margin-top: 12px;
+}
+body.login {
+    background: rgba(0,0,0,0.85);  
+}
+body.login #container{
+    border: solid 2px red;
+    border-radius: 5px;
+}
+body.login #header{
+    background-color: black;
+}
+body.login #main{
+    background-color: black;
+}
+body.login #container .main .content #content #content-main #login-form .form-row label{
+    color: red;
+}
+body.login #container .main .content #content #content-main #login-form .submit-row input{
+    background-color: red;
+}
+
+
+/* Logout */
+body {
+    background: rgba(0,0,0,0.85);  
+}
+body #container #header{
+    background-color: black;
+}
+body #container .breadcrumbs{
+    background-color: black;
+}
+body #container .breadcrumbs  a{
+    color: red;
+}
+body #container .main  .content #content p{
+    color: #fff;
+}
+body #container .main  .content #content p > a{
+    color: red;
+}
+
+
+
+/* Dashboard */
+body.dashboard{
+    background: rgba(0,0,0,0.85);  
+}
+body.dashboard #header{
+    background-color: black;
+}
+body.dashboard #container #header #user-tools a:hover{
+    color: red;   
+}
+body.dashboard #container #main #content #content-main > .module table caption a {
+    color: red;    
+}
+body.dashboard #container #main #content #content-main > .module table caption {
+    background-color: black;
+}
+body.dashboard #container #main #content #content-related h2{
+    color: red;
+    background-color: black;
+}

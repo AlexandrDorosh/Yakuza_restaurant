@@ -1,0 +1,214 @@
+{% extends 'base.html/' %}
+{% load static %}
+
+{% block title %}Menu{% endblock  %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'styles/menu.css' %}">
+<link rel="stylesheet" href="{% static 'styles/menu_responsive.css' %}">
+<link rel="stylesheet" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Home -->
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll"
+		data-image-src="{{ STATIC_PREFIX }}images/menu.jpg" data-speed="0.8"></div>
+	<div class="home_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_subtitle page_subtitle">Yakuza</div>
+						<div class="home_title">
+							<h1>The Menu</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- The Menu -->
+
+<div class="themenu">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="section_title_container text-center">
+					<div class="section_subtitle page_subtitle">Something new</div>
+					<div class="section_title">
+						<h1>Discover Our Menu</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row themenu_text_row">
+			<div class="col-lg-6">
+				<div class="themenu_text">
+					<p>In the Yakuza Sushi menu you will find gourmet Japanese cuisine, namely sushi and rolls. The high
+						content of fish, exotic fruits gives the dishes taste and elegance.</p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="themenu_text">
+					<p>
+						やくざ寿司メニューには、寿司やロールパンなどのグルメな日本料理があります。魚、エキゾチックなフルーツの高い含有量は、料理に味と優雅さを与えます。</p>
+				</div>
+			</div>
+		</div>
+		<div class="row themenu_row">
+
+			<!-- Starters -->
+			<div class="col-lg-4 themenu_column">
+				<div class="themenu_image"><img src="{{ STATIC_PREFIX }}images/piz.png" alt=""></div>
+				<div class="themenu_col trans_400">
+					<div class="themenu_col_title">Pizza</div>
+					<div class="dish_list">
+
+						<!-- Dish -->
+						{% for item in pizza %}
+						<div class="dish">
+							<div
+								class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+								<div class="dish_title">
+									<h3>{{item.name}}</h3>
+								</div>
+								<div class="dish_price">{{item.price}}$</div>
+							</div>
+							<div class="dish_contents">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li>{{item.description}}</li>
+								</ul>
+							</div>
+							<div class="dish_order">
+								<form action="{% url 'cart:cart_add' item.id %}" method="post">
+									{{ cart_product_form }}
+									{% csrf_token %}
+									<input type="submit" value="Add to cart"  class="cart_input"> 
+								</form>
+							</div>
+						</div>
+						{% endfor %}
+
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Main -->
+			<div class="col-lg-4 themenu_column">
+				<div class="themenu_image"><img src="{{ STATIC_PREFIX }}images/roll.png" alt=""></div>
+				<div class="themenu_col trans_400">
+					<div class="themenu_col_title">Sushi</div>
+					<div class="dish_list">
+
+						<!-- Dish -->
+						{% for item in sushi %}
+						<div class="dish">
+							<div
+								class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+								<div class="dish_title">
+									<h3>{{item.name}}</h3>
+								</div>
+								<div class="dish_price">{{item.price}}$</div>
+							</div>
+							<div class="dish_contents">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li>{{item.description}}</li>
+								</ul>
+							</div>
+							<div class="dish_order">
+								<form action="{% url 'cart:cart_add' item.id %}" method="post">
+									{{ cart_product_form }}
+									{% csrf_token %}
+									<input type="submit" value="Add to cart"  class="cart_input">
+								</form>
+							</div>
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Deserts -->
+			<div class="col-lg-4 themenu_column">
+				<div class="themenu_image"><img src="{{ STATIC_PREFIX }}images/des.png" alt=""></div>
+				<div class="themenu_col trans_400">
+					<div class="themenu_col_title">Desserts</div>
+					<div class="dish_list">
+
+						<!-- Dish -->
+						{% for item in dessert %}
+						<div class="dish">
+							<div
+								class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+								<div class="dish_title">
+									<h3>{{item.name}}</h3>
+								</div>
+								<div class="dish_price">{{item.price}}$</div>
+							</div>
+							<div class="dish_contents">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li>{{item.description}}</li>
+								</ul>
+							</div>
+							<div class="dish_order">
+								<form action="{% url 'cart:cart_add' item.id %}" method="post">
+									{{ cart_product_form }}
+									{% csrf_token %}
+									<input type="submit" value="Add to cart" class="cart_input">
+								</form>
+							</div>
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Reservations -->
+
+<div class="reservations text-center">
+	<div class="parallax_background parallax-window" data-parallax="scroll"
+		data-image-src="{{ STATIC_PREFIX }}images/reservations.jpg" data-speed="0.8"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
+					<div class="res_stars page_subtitle">5 Stars</div>
+					<div class="res_title">Make a Reservation</div>
+					<div class="res_form_container">
+						<form action="#" id="res_form" class="res_form">
+							<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
+								<input type="text" id="datepicker" class="res_input" required="required">
+								<input type="text" class="res_input timepicker" required="required">
+								<select class="res_select">
+									<option disabled="" selected="">2 person</option>
+									<option>3 person</option>
+									<option>4 person</option>
+									<option>5 person</option>
+									<option>6 person</option>
+								</select>
+							</div>
+							<button class="res_button">Make a Reservation</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/menu.js' %}"></script>
+{% endblock %}

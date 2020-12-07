@@ -1,0 +1,327 @@
+{% extends 'base.html/' %}
+{% load static %}
+
+{% block title %}Elements{% endblock%}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'styles/elements.css' %}">
+<link rel="stylesheet" href="{% static 'styles/elements_responsive.css' %}">
+<link rel="stylesheet" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+	<!-- Home -->
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}images/elements.jpg" data-speed="0.8"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_subtitle page_subtitle">The Venue</div>
+							<div class="home_title"><h1>Elements</h1></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Elements -->
+
+	<div class="elements">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<!-- Buttons -->
+
+					<div class="buttons">
+						 <div class="elements_title">Buttons</div>
+						 <div class="buttons_container d-flex flex-row align-items-start justify-content-start flex-wrap">
+						 	<div class="button button_1"><a href="#">Make a Reservation</a></div>
+						 	<div class="button button_2"><a href="#">Make a Reservation</a></div>
+						 	<div class="button button_3"><a href="#">Make a Reservation</a></div>
+						 </div>
+					</div>
+
+					<!-- Accordions & Tabs -->
+
+					<div class="accordions_and_tabs">
+						<div class="elements_title">Accordions & Tabs</div>
+						<div class="row accordions_and_tabs_row">
+							<div class="col-lg-6">
+								
+								<!-- Accordions -->
+								<div class="accordions">
+
+									<!-- Accordion -->
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center active"><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div></div>
+										<div class="accordion_panel">
+											<div>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Accordion -->
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center"><div>Morbi in urna commodo, cursus ante at, facilisis augue</div></div>
+										<div class="accordion_panel">
+											<div>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Accordion -->
+									<div class="accordion_container">
+										<div class="accordion d-flex flex-row align-items-center"><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div></div>
+										<div class="accordion_panel">
+											<div>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								
+								<!-- Tabs -->
+								<div class="tabs">
+									<div class="tabs d-flex flex-row align-items-center justify-content-start flex-wrap">
+										<div class="tab active">Lorem ipsum dolor</div>
+										<div class="tab">Morbi in urna</div>
+										<div class="tab">Lorem ipsum</div>
+									</div>
+									<div class="tab_panels">
+										<div class="tab_panel active">
+											<div class="tab_panel_content d-flex flex-row align-items-start justify-content-start">
+												<div><div class="tab_image"><img src="{{ STATIC_PREFIX }}images/tab.jpg" alt=""></div></div>
+												<div class="tab_text">
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+												</div>
+											</div>
+										</div>
+										<div class="tab_panel">
+											<div class="tab_panel_content">
+												<div class="tab_text">
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+												</div>
+											</div>
+										</div>
+										<div class="tab_panel">
+											<div class="tab_panel_content">
+												<div class="tab_text">
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Loaders -->
+
+					<div class="loaders">
+						<div class="elements_title">Loaders</div>
+						<div class="row loaders_row">
+
+							<!-- Loader -->
+							<div class="col-xl-3 col-md-6 loader_col">
+								<!-- Loader -->
+								<div class="loader_container text-center">
+									<div class="loader text-center" data-perc="0.80"></div>
+									<div class="loader_content">
+										<div class="loader_title">Deserts</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Loader -->
+							<div class="col-xl-3 col-md-6 loader_col">
+								<!-- Loader -->
+								<div class="loader_container text-center">
+									<div class="loader text-center" data-perc="0.20"></div>
+									<div class="loader_content">
+										<div class="loader_title">Pasta</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Loader -->
+							<div class="col-xl-3 col-md-6 loader_col">
+								<!-- Loader -->
+								<div class="loader_container text-center">
+									<div class="loader text-center" data-perc="1.00"></div>
+									<div class="loader_content">
+										<div class="loader_title">Perfect</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Loader -->
+							<div class="col-xl-3 col-md-6 loader_col">
+								<!-- Loader -->
+								<div class="loader_container text-center">
+									<div class="loader text-center" data-perc="0.95"></div>
+									<div class="loader_content">
+										<div class="loader_title">Main Courses</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Milestones -->
+
+					<div class="milestones">
+						<div class="elements_title">Milestones</div>
+						<div class="row milestones_row">
+							
+							<!-- Milestone -->
+							<div class="col-xl-3 col-md-6 milestone_col">
+								<div class="milestone d-flex flex-row align-items-end justify-content-md-center justify-content-start">
+									<div class="milestone_icon d-flex flex-column align-items-center justify-content-end"><img src="{{ STATIC_PREFIX }}images/icon_1.png" alt=""></div>
+									<div class="milestone_content">
+										<div class="milestone_counter" data-end-value="129">0</div>
+										<div class="milestone_text">Awards</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="col-xl-3 col-md-6 milestone_col">
+								<div class="milestone d-flex flex-row align-items-end justify-content-md-center justify-content-start">
+									<div class="milestone_icon d-flex flex-column align-items-center justify-content-end"><img src="{{ STATIC_PREFIX }}images/icon_2.png" alt=""></div>
+									<div class="milestone_content">
+										<div class="milestone_counter" data-end-value="75">0</div>
+										<div class="milestone_text">New Articles</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="col-xl-3 col-md-6 milestone_col">
+								<div class="milestone d-flex flex-row align-items-end justify-content-md-center justify-content-start">
+									<div class="milestone_icon d-flex flex-column align-items-center justify-content-end"><img src="{{ STATIC_PREFIX }}images/icon_3.png" alt=""></div>
+									<div class="milestone_content">
+										<div class="milestone_counter" data-end-value="36">0</div>
+										<div class="milestone_text">New Projects</div>
+									</div>
+									
+								</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="col-xl-3 col-md-6 milestone_col">
+								<div class="milestone d-flex flex-row align-items-end justify-content-md-center justify-content-start">
+									<div class="milestone_icon d-flex flex-column align-items-center justify-content-end"><img src="{{ STATIC_PREFIX }}images/icon_4.png" alt=""></div>
+									<div class="milestone_content">
+										<div class="milestone_counter" data-end-value="52">0</div>
+										<div class="milestone_text">Followers</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Icon Boxes -->
+
+					<div class="icon_boxes">
+						<div class="elements_title">Icon Boxes</div>
+						<div class="row icon_boxes_row">
+							
+							<!-- Icon Box -->
+							<div class="col-lg-4 icon_box_col">
+								<div class="icon_box">
+									<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+										<div class="icon_box_icon d-flex flex-column align-items-start justify-content-center"><img src="{{ STATIC_PREFIX }}images/icon_5.png" alt=""></div>
+										<div class="icon_box_title">Top Chefs</div>
+									</div>
+									<div class="icon_box_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien.</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Icon Box -->
+							<div class="col-lg-4 icon_box_col">
+								<div class="icon_box">
+									<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+										<div class="icon_box_icon d-flex flex-column align-items-start justify-content-center"><img src="{{ STATIC_PREFIX }}images/icon_6.png" alt=""></div>
+										<div class="icon_box_title">The best dishes</div>
+									</div>
+									<div class="icon_box_text">
+										<p>Scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio.</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Icon Box -->
+							<div class="col-lg-4 icon_box_col">
+								<div class="icon_box">
+									<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+										<div class="icon_box_icon d-flex flex-column align-items-start justify-content-center"><img src="{{ STATIC_PREFIX }}images/icon_7.png" alt=""></div>
+										<div class="icon_box_title">Beautiful Atmosphere</div>
+									</div>
+									<div class="icon_box_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Reservations -->
+
+	<div class="reservations text-center">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ STATIC_PREFIX }}images/reservations.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
+						<div class="res_stars page_subtitle">5 Stars</div>
+						<div class="res_title">Make a Reservation</div>
+						<div class="res_form_container">
+							<form action="#" id="res_form" class="res_form">
+								<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
+									<input type="text" id="datepicker" class="res_input" required="required">
+									<input type="text" class="res_input timepicker" required="required">
+									<select class="res_select">
+										<option disabled="" selected="">2 person</option>
+										<option>3 person</option>
+										<option>4 person</option>
+										<option>5 person</option>
+										<option>6 person</option>
+									</select>
+								</div>
+								<button class="res_button">Make a Reservation</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/elements.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you</title>
+    <link rel="stylesheet" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main_styles_cart.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive_cart.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Thank you</h1>
+                <p class="thank">Your order has been successfully completed. Your order number is
+                <strong>{{ order.id }}</strong>.</p>           
+            </div>         
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'pages:index' %}" class="button light">Home Page</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

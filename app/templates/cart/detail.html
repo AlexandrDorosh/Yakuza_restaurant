@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your shoping cart</title>
+    <link rel="stylesheet" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main_styles_cart.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive_cart.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="home_content text-center">
+                    
+                    <div class="home_title">
+                        <h1>Your shopping cart</h1>
+                        <div class="ml-auto mr-auto">
+                            <table class="cart">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product</th>
+                                        <th>Quantity</th>
+                                        <th>Remove</th>
+                                        <th>Unit price</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in cart %}
+                                    {% with product=item.product %}
+                                    <tr>
+                                        <td>
+                                            <a href="{{ product.get_absolute_url }}">
+                                                <img src="
+                                                            {% if product.image %}
+                                                                {{ product.image.url }}
+                                                            {% else %}
+                                                                {% static 'img/no_image.png' %}
+                                                            {% endif %}">
+                                            </a>
+                                        </td>
+                                        <td>{{ product.name }}</td>
+                                        <td>{{ item.quantity }}</td>
+                                        <td><a href="{% url 'cart:cart_remove' product.id%}">Remove</a></td>
+                                        <td>${{ item.price }}</td>
+                                        <td>${{ item.total_price }}</td>
+                                    </tr>
+                                    {% endwith %}
+                                    {% endfor %}
+                                    <tr class="total">
+                                        <td>Total</td>
+                                        <td colspan="4"></td>
+                                        <td >{{ cart.get_total_price }}$</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="text">
+                            <a href="{% url 'orders:order_create' %}" class="button">
+                                Checkout
+                            </a>
+                            <a href="{% url 'pages:menu' %}" class="button light">Continue shopping</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
